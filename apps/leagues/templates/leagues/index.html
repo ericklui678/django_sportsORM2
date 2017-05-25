@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sports Leagues</title>
+	</head>
+	<body>
+		<h1>1. Teams in Atlantic Soccer Conference</h1>
+		<ol>
+			{% for team in atlantic %}
+				<li>{{team.location}} {{team.team_name}}: {{team.league}}</li>
+			{% endfor %}
+		</ol>
+		<h1>2. Current players on Boston Penguins</h1>
+		<ol>
+			{% for player in curr_penguins %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>3. Current Players in ICBC</h1>
+		<ol>
+			{% for player in icbc %}
+				<li>{{player}}</li>
+			{% endfor %}
+		</ol>
+		<h1>4. Current Players in ACAF</h1>
+		<ol>
+			{% for player in acaf %}
+				<li>{{player}}</li>
+			{% endfor %}
+		</ol>
+		<h1>5. All football players</h1>
+		<ol>
+			{% for player in football %}
+				<li>{{player}}</li>
+			{% endfor %}
+		</ol>
+		<h1>6. All teams with current player Sophia</h1>
+		<ol>
+			{% for team in team_sophia %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>7. All leagues with current player Sophia</h1>
+		<ol>
+			{% for league in league_sophia %}
+				<li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>8. Last name Flores and doesn't currently play for Washington Roughriders</h1>
+		<ol>
+			{% for player in flores %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>9. All and current teams Samuel Evans played with</h1>
+		<ol>
+			{% for team in samuel_evans %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>10. All players with Manitoba Tiger-Cats</h1>
+		<ol>
+			{% for player in manitoba %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>11. All former players from Wichita Vikings</h1>
+		<ol>
+			{% for player in vikings %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>12. Every team Jacob Gray played before Oregon Colts</h1>
+		<ol>
+			{% for team in gray %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>13. Everyone named Joshua in Atlantic Foundation of Amateur Baseball Players</h1>
+		<ol>
+			{% for player in joshua %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>14. All teams that have had 12 or more players</h1>
+		<ol>
+			{% for team in num_players %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>15. All players sorted by number of teams played for</h1>
+		<ol>
+			{% for player in all_players %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Leagues</h1>
+		<ol>
+			{% for league in leagues %}
+				<li>{{league.name}}</li>
+			{% empty %}
+				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h1>Teams</h1>
+		<ol>
+			{% for team in teams %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% empty %}
+				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h1>Players</h1>
+		<ol>
+			{% for player in players %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% empty %}
+				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+	</body>
+</html>
